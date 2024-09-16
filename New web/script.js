@@ -181,16 +181,16 @@ $(document).ready(function () {
         $(".container5").hide();
         $(".feedform").hide();
         $(".about_us").hide();
-        $(".parent_log_form").show(1000);
+        $(".log").show(1000);
         $(".reji_css").hide();
     });
-    $(".sign2up").click(function() {
-    $(".hide").hide();
-    $(".container5").hide();
-    $(".feedform").hide();
-    $(".about_us").hide();
-    $(".parent_log_form").hide();
-    $(".reji_css").show(1000);
+        $(".sign2up").click(function() {
+        $(".hide").hide();
+        $(".container5").hide();
+        $(".feedform").hide();
+        $(".about_us").hide();
+        $(".parent_log_form").hide();
+        $(".reji_css").show(1000);
 });
 
 })
