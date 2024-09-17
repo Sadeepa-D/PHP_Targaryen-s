@@ -137,63 +137,63 @@ $(document).ready(function () {
 // main hiding
 
 $(document).ready(function () {
-        $(".hide").show();
-        $(".container5").hide();
-        $(".feedform").hide();
-        $(".about_us").hide();
-        $(".log").hide();
-        $(".reji_css").hide();
-    $(".news_btn").click(function () {
-        $(".hide").hide();
-        $(".feedform").hide();
-        $(".container5").show(1000);
-        $(".about_us").hide();
-        $(".log").hide();
-        $(".reji_css").hide();
-    })
-    $(".feedback_btn").click(function(){
-        $(".hide").hide();
-        $(".container5").hide();
-        $(".feedform").show(1000);
-        $(".about_us").hide();
-        $(".log").hide();
-        $(".reji_css").hide();
+    // Hide all sections except the home section (assumed to be with class 'hide')
+    function hideAll() {
+        $(".container5, .feedform, .about_us, .log, .reji_css").hide();
+    }
 
+    // Show the home section by default
+    function showHome() {
+        hideAll();
+        $(".hide").fadeIn(1000);
+    }
+
+    // Initialize the page with the home section visible
+    showHome();
+
+    // News button
+    $(".news_btn").click(function () {
+        hideAll();
+        $(".container5").fadeIn(1000);
+        $(".hide").fadeOut();
     });
-    $(".home_btn").click(function(){
-        $(".hide").show(1000);
-        $(".container5").hide(1000);
-        $(".feedform").hide(1000);
-        $(".about_us").hide();
-        $(".log").hide();
-        $(".reji_css").hide();
+
+    // Feedback button
+    $(".feedback_btn").click(function () {
+        hideAll();
+        $(".feedform").fadeIn(1000);
+        $(".hide").fadeOut();
     });
-    $(".about_btn").click(function(){
-        $(".hide").hide();
-        $(".container5").hide();
-        $(".feedform").hide();
-        $(".about_us").show(1000);
-        $(".log").hide();
-        $(".reji_css").hide();
+
+    // Home button
+    $(".home_btn").click(function () {
+        showHome();
     });
-    $(".log2f").click(function(){
-        $(".hide").hide();
-        $(".container5").hide();
-        $(".feedform").hide();
-        $(".about_us").hide();
-        $(".log").show(1000);
-        $(".reji_css").hide();
+
+    // About Us button
+    $(".about_btn").click(function () {
+        hideAll();
+        $(".about_us").fadeIn(1000);
+        $(".hide").fadeOut();
     });
-        $(".sign2up").click(function() {
-        $(".hide").hide();
-        $(".container5").hide();
-        $(".feedform").hide();
-        $(".about_us").hide();
-        $(".log").hide();
-        $(".reji_css").show(1000);
+
+    // Login button
+    $(".log2f").click(function () {
+        hideAll();
+        $(".log").fadeIn(1000);
+        $(".hide").fadeOut();
+    });
+
+    // Sign-up button
+    $(".sign2up").click(function () {
+        hideAll();
+        $(".reji_css").fadeIn(1000);
+        $(".hide").fadeOut();
+    });
 });
 
-})
+
+
 
 // about us 
 
