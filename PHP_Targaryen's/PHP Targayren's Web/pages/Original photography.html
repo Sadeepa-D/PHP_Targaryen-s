@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leesa Art Gallery</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yanone+Kaffeesatz:wght@200..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+
+    <!--icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            background-image: url("../Photos/backgroundImg.png");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+
+
+        header {
+            background-color: black;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            opacity: 0.6;
+        }
+
+
+        .navigation {
+
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 90px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            background-color: #ccc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-bottom: 1px;
+            padding-bottom: 1px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 50px;
+            height: 700px;
+        }
+
+        .artwork {
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .artwork img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 105%;
+            height: 105%;
+            transition: transform 0.3s ease;
+        }
+
+
+
+        .artwork:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay:hover {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .overlay-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .navigation-bar {
+            align-self: center;
+            overflow: hidden;
+            opacity: 0.9;
+            text-align: center;
+            font-size: 150%;
+            margin-top: 1px;
+
+
+        }
+
+        .navigation-bar a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition-duration: 0.6s;
+            border-radius: 7px;
+
+        }
+
+        .navigation-bar a:hover {
+            background-color: goldenrod;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bgImg"></div>
+    <div class="header">
+        <div id="container1">
+            <div class="conta1">
+                <div class="logo">
+                    <img class="a" src="../Photos/paintbrush_gold-removebg-preview.png" alt="logo">
+                </div>
+            </div>
+            <div class="conta2">
+                <div class="leesa">
+                    <h1>LEESA GALLERY</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <!-- <li><a href="Original photography.html">GALLERY</a></li> -->
+                <!-- <li><a href="Calculator.html">CART</a></li> -->
+                <!-- <li><a href="News.html">NEWS</a></li>
+                <li><a href="aboutUs.html">ABOUT</a></li> -->
+            </ul>
+        </div>
+    </div>
+    <br>
+
+    <header>
+        <h1>Photography</h1>
+    </header>
+
+    <br>
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="gallery">
+
+            <div class="artwork">
+                <img src="../Photos/tiger.jpg" alt="Artwork 1">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3>TIGER</h3>
+                        <p>NATURE PHOTOGRAPHY</p>
+                        <h2>COMMING SOON!</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artwork">
+                <img src="../Photos/romantic moonlit store.jpg" alt="Artwork 2">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3> ROMANTIC MOONLIT STROLL </h3>
+                        <p>PHOTOGRAPHY</p>
+                        <h2>COMMING SOON!</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artwork">
+                <a href="Wild elephant correct.html" target="_self">
+                    <img src="../Photos/wildElephant.jpg" alt="Artwork 3">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>WILD-LIFE</h3>
+                            <p>NATURE PHOTOGRAPHY</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="artwork">
+                <img src="../Photos/4p.jpg" alt="Artwork 4">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3>LOTUS TOWER</h3>
+                        <p> NATURE Photography</p>
+                        <h2>SOLD-OUT</h2>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="artwork">
+                <a href="haputhale.HTML" target="_self">
+                    <img src="../Photos/5p.jpg" alt="Artwork 5">
+
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>STARRY NIGHT OVER HAPUTHALE</h3>
+                            <p>PHOTOGRAPHY</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="artwork">
+                <img src="../Photos/the-sri-dalada-maligawa.jpg" alt="Artwork 6">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3>TEMPLE OF TOOTH</h3>
+                        <p>PHOTOGRAPHY</p>
+                        <h2>COMMING SOON!</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork">
+                <a href="streetfood correct.html" target="_self">
+                    <img src="../Photos/streetfood.jpeg" alt="Artwork 7">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>STREET FARE FRAMES</h3>
+                            <p>PHOTOGRAPHY</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="artwork">
+                <img src="../Photos/waterfall.jpg" alt="Artwork 8">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3>WATERFALL</h3>
+                        <p>NATURE PHOTOGRAPHY</p>
+                        <h2>COMMING SOON!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    <div class="navigation-bar">
+
+        <a href="Original photography.html">Photography Art Gallery</a>
+        <a href="AI ART Gallery 2.html">AI Art Gallery</a>
+        <a href="Oil Paintings.html">Oil Paintings</a>
+
+    </div>
+    <div id="footer">
+        <div class="container4">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3 class="h3_2">LEESA GALLERY</h3>
+                    <p class="Fdetail">Email: info@leesagallery.com</p>
+                    <p class="Fdetail">Phone: +94 (112) 123-4567</p>
+                    <p class="Fdetail">Address: No116, Art Street, Kamburupituya, Matara</p>
+                </div>
+                <div class="footer-right">
+                    <h4 class="Fdetail">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <p class="copyRight"
+                    style="position:absolute; margin-left: 2%; color: goldenrod; letter-spacing: 10px;">
+                    &#169 2024 LEESA ART GALLERY. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
