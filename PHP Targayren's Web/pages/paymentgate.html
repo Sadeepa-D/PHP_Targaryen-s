@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS file link -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            background-image: url("../Photos/backgroundImg.png");
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0px 5px;
+            padding: 5px;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+        }
+
+        .containerPayment {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            min-height: 100vh;
+        }
+
+        .containerPayment form {
+            padding: 20px;
+            width: 700px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid #ffce0b;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+        }
+
+        .containerPayment form .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .containerPayment form .row .col {
+            flex: 1 1 250px;
+        }
+
+        .containerPayment form .row .col .title {
+            font-size: 20px;
+            color: white;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .title{
+            text-align: center;
+            -webkit-text-stroke: #000;
+            -webkit-text-stroke-width: 0.8px; 
+        }
+
+        .containerPayment form .row .col .inputBox {
+            margin: 15px 0;
+        }
+
+        .containerPayment form .row .col .inputBox span {
+            margin-bottom: 10px;
+            display: block;
+            color: white;
+        }
+
+        .containerPayment form .row .col .inputBox input {
+            width: 100%;
+            border: 1px solid #ffce0b;
+            background-color: rgba(252, 251, 251, 0.115);
+            padding: 10px 15px;
+            font-size: 15px;
+            text-transform: none;
+            color: white;
+        }
+
+        .containerPayment form .row .col .inputBox input:focus {
+            border: 1px solid #000;
+        }
+
+        .containerPayment form .row .col .flex {
+            display: flex;
+            gap: 15px;
+        }
+
+        .containerPayment form .row .col .flex .inputBox {
+            margin-top: 5px;
+        }
+
+        .containerPayment form .row .col .inputBox img {
+            height: 34px;
+            margin-top: 5px;
+            filter: drop-shadow(0 0 1px #000);
+        }
+
+        .submit-to-pay a{
+            position: sticky;
+            display: block;
+            background: #ffffff;
+            text-align: center;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+            padding: 10px 20px;
+            transition: 0.6s;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-left: auto;
+        }
+
+        .submit-to-pay a:hover {
+            background: var(--clr);
+            color: var(--clr);
+            letter-spacing: 0.25em;
+            box-shadow: 0 0 35px var(--clr);
+        }
+
+        .submit-to-pay a:before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: #27282c;
+        }
+
+        .submit-to-pay a span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .submit-to-pay a i {
+            position: absolute;
+            inset: 0;
+            display: block;
+        }
+
+        .submit-to-pay a i::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 80%;
+            width: 10px;
+            height: 4px;
+            background: #27282c;
+            transform: translate(-50%) skewX(325deg);
+            transition: 0.5s;
+        }
+
+        .submit-to-pay a:hover i::before {
+            width: 20px;
+            left: 20%;
+        }
+
+        .submit-to-pay a i::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 80%;
+            width: 10px;
+            height: 4px;
+            background: #27282c;
+            transform: translate(-50%) skewX(325deg);
+            transition: 0.5s;
+        }
+
+        .submit-to-pay a:hover i::after {
+            width: 20px;
+            left: 20%;
+        }
+
+        .submit-to-pay a i::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 10px;
+            height: 4px;
+            background: #27282c;
+            transform: translate(-50%) skewX(325deg);
+            transition: 0.5s;
+        }
+
+        .submit-to-pay a:hover i::after {
+            width: 20px;
+            left: 80%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="containerPayment">
+    <form action="../payment.php" method="POST">
+        <div class="row">
+            <div class="col">
+                <h3 class="title">Billing Address</h3>
+                <div class="inputBox">
+                    <span>Full Name :</span>
+                    <input type="text" placeholder="Name" name="name">
+                </div>
+                <div class="inputBox">
+                    <span>Email :</span>
+                    <input type="email" placeholder="example@example.com" name="email">
+                </div>
+                <div class="inputBox">
+                    <span>Address :</span>
+                    <input type="text" placeholder="Room - Street - Locality" name="address">
+                </div>
+                <div class="inputBox">
+                    <span>City :</span>
+                    <input type="text" placeholder="Galle" name="city">
+                </div>
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>State :</span>
+                        <input type="text" placeholder="Sri Lanka" name="state">
+                    </div>
+                    <div class="inputBox">
+                        <span>Zip Code :</span>
+                        <input type="text" placeholder="12345" name="zip_code">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <h3 class="title">Payment</h3>
+                <div class="inputBox">
+                    <span>Cards Accepted :</span>
+                    <img src="../Photos/card_img.png" alt="Accepted Cards">
+                </div>
+                <div class="inputBox">
+                    <span>Name on Card :</span>
+                    <input type="text" placeholder="Mr. Sadeepa Dinakara" name="name_on_card">
+                </div>
+                <div class="inputBox">
+                    <span>Credit card number :</span>
+                    <input type="number" placeholder="1111-2222-3333-4444" name="card_number">
+                </div>
+                <div class="inputBox">
+                    <span>Exp Month :</span>
+                    <input type="text" placeholder="January" name="exp_month">
+                </div>
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Exp Year :</span>
+                        <input type="number" placeholder="2024" name="exp_year">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="text" placeholder="123" name="cvv">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="submit-to-pay">
+            <button type="submit" style="--clr:#daa520" class="submit-to-pay-btn"><span>Proceed to Checkout</span><i></i></button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
