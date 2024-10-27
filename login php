@@ -10,8 +10,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user_name = mysqli_real_escape_string($connect, $_POST['un']);
     $password = mysqli_real_escape_string($connect, $_POST['pw']);
     
+    if ($user_name === 'admin' && $password === 'admin') {
+        header ("Location: pages/admin.html");
+        exit(); 
+    }
+
     // Query to check for matching username and password
-    $query = "SELECT * FROM login WHERE u_name='$user_name' AND user_password='$password'";
+    $query = "SELECT u_name , user_password FROM rejistration WHERE u_name='$user_name' AND user_password='$password'";
     $result = mysqli_query($connect, $query);
     
     // Check if a match is found
